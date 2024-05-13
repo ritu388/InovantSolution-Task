@@ -1,0 +1,49 @@
+<div>
+
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg " style="margin-top: 4rem;">
+                    <div class="card-header">
+                        <h5 class="text-center font-weight-bold my-4">Welcome, please Login</h5>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="loginForm">
+                            <div class="form-group">
+                                <input class="form-control py-4" id="inputEmailAddress" type="email"  name="inputUserName"
+                                 placeholder="Email*" formControlName="email" />
+                                 <!-- <span style="color: red" *ngIf="submitForm && loginForm.get('email').errors.required">
+                                    please enter valid Email Id</span> -->
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control py-4" id="inputPassword" type="password" name="inputPassword"
+                                 placeholder="Password*" formControlName="password" maxlength="6"/>
+                                 <!-- <span style="color: red" *ngIf="submitForm && loginForm.get('password').errors.required">
+                                    required field</span>
+                                 <span style="color: red;" *ngIf="submitForm && loginForm.get('password').errors.minLength">
+                                    please enter minimum 6 character</span> -->
+                            </div>
+                            <div class="form-group">
+                                <div class="small">
+                                    <a [routerLink]="['']">forget password?</a>
+                                </div>
+                            </div>
+                            <div class="form-group align-items-center justify-content-between mt-4 mb-0" style="text-align: center;">
+                                <a class="btn btn-danger" type="submit" (click)="loginFunction()" >Login</a>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="card-footer text-center">
+                        <div class="small">
+                            <a [routerLink]="['signup']">Need an account? Sign up!</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    </div>
+    

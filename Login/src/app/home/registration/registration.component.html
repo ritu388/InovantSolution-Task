@@ -1,0 +1,102 @@
+<!-- <p>registration works!</p> -->
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-1 rounded-lg " style="margin-top: 4rem;">
+                    <div class="card-header py-1">
+                        <h2 class="text-center font-weight-light ">Create an Account</h2>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="signup">
+                            <div class="form-group">
+                                <input class="form-control py-3 placeholder-green"
+                                 name="fullname" id="Name" type="text" placeholder="Enter FullName*"
+                                 formControlName="Fullname" />
+                                 <span style="color:red" *ngIf="submitForm && signup.get('Fullname').errors.required"> required field</span>
+                                 <span style="color:red" *ngIf="signup.get('Fullname').invalid && (signup.get('Fullname').touched || signup.get('Fullname').dirty)">
+                                    Fullname is required
+                                  </span>
+                                  
+                            </div>
+
+
+                            <div class="form-group">
+                                <input class="form-control py-3 placeholder-green" 
+                                 name="inputEmail" id="email" type="email" aria-describedby="emailHelp"
+                                 placeholder="email address*" formControlName="email"/>
+                                 <span style="color:red" *ngIf="submitForm && signup.get('email').errors.required">
+                                     required field</span>
+                                 <span style="color:red" *ngIf="signup.get('email').invalid && 
+                                 (signup.get('email').touched || signup.get('email').dirty)"> 
+                                    Email field is required
+                                 </span>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control py-3 placeholder-green"  type="password" placeholder="password*" id="p1"
+                                    formControlName="password"/>
+                                    <span style="color:red" *ngIf="submitForm && signup.get('password').errors.required">
+                                         required field</span> 
+                                 <span style="color:red" *ngIf="signup.get('password').invalid && 
+                                 (signup.get('password').touched || 
+                                 signup.get('password').dirty)"> 
+                                 password field is required
+                                 </span>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control py-3 placeholder-green" 
+                                    id="p2" type="password" placeholder="confirm password*"  
+                                    formControlName="confirm_password"/>
+                                    <span style="color:red" *ngIf="submitForm && signup.get('confirm_password').errors.required"> required field</span>
+                                    <span style="color:red" *ngIf="signup.get('confirm_password').invalid && (signup.get('confirm_password').touched || 
+                                    signup.get('confirm_password').dirty)"> 
+                                    Password field is required
+                                 </span>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control py-3 placeholder-green" 
+                                    id="interest" type="text" placeholder="interests*" formControlName="interests"/>
+                                    <span style="color:red" *ngIf="submitForm && signup.get('interests').errors.required"> required field</span>
+                                 <span style="color:red" *ngIf="signup.get('interests').invalid && (signup.get('interests').touched 
+                                 || signup.get('interests').dirty)"> 
+                                    Interest field is required
+                                 </span>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control py-3" 
+                                    id="size" type="text" placeholder="preferred size*" formControlName="size"/>
+                                    <span style="color:red" *ngIf="submitForm && signup.get('size').errors.required"> required field</span>
+                                    <span style="color:red" *ngIf="signup.get('size').invalid && (signup.get('size').touched 
+                                    || signup.get('size').dirty)"> 
+                                    Size field is required
+                                 </span>
+                            </div>
+
+                            <div class="form-group ml-4">
+                                <input class="form-check-input py-3" type="checkbox" value="" id="flexCheckChecked" formControlName="newsLetter">
+                                <label>newsletter</label>
+                                <span style="color:red" *ngIf="submitForm && signup.get('newsLetter').errors.required"> required field</span>
+                            </div>
+                            <div class="form-group ml-4">
+                                <input class="form-check-input py-3" type="checkbox" value="" id="flexCheckChecked1" formControlName="policy">
+                                <label>by registering you agree our t&c and privacy policy</label>
+                                <span style="color:red" *ngIf="submitForm && signup.get('policy').errors.required"> required field</span>
+                            </div>
+                            <div class="form-group mt-0 mb-0"><a class="btn btn-danger btn-block" 
+                                (click)="postSignup()"
+                                >Create Account</a></div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-1 mt-0">
+                        <div class="small">
+                            <a [routerLink]="['']">Have an account? Go to login</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
